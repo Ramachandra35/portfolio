@@ -17,39 +17,39 @@ export default function Page() {
       </a>
 
       <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-          <Link href="#about" className="font-medium">
-            Ramachandran S
+        <div className="mx-auto max-w-5xl px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between">
+          <Link href="#about" className="font-medium text-sm sm:text-base">
+            Ramachandran
           </Link>
-          <nav aria-label="Primary">
-            <ul className="flex items-center gap-4 text-sm text-muted-foreground">
+          <nav aria-label="Primary" className="hidden md:block">
+            <ul className="flex items-center gap-3 lg:gap-4 text-xs sm:text-sm text-muted-foreground">
               <li>
-                <a href="#experience" className="hover:text-foreground">
+                <a href="#experience" className="hover:text-foreground transition">
                   Experience
                 </a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-foreground">
+                <a href="#skills" className="hover:text-foreground transition">
                   Skills
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-foreground">
+                <a href="#projects" className="hover:text-foreground transition">
                   Projects
                 </a>
               </li>
               <li>
-                <a href="#education" className="hover:text-foreground">
+                <a href="#education" className="hover:text-foreground transition">
                   Education
                 </a>
               </li>
               <li>
-                <a href="#certifications" className="hover:text-foreground">
+                <a href="#certifications" className="hover:text-foreground transition">
                   Certs
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-foreground">
+                <a href="#contact" className="hover:text-foreground transition">
                   Contact
                 </a>
               </li>

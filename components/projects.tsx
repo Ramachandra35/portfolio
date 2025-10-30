@@ -1,64 +1,74 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import type { Project } from "@/lib/profile"
-import { profile } from "@/lib/profile"
-import { SectionReveal } from "@/components/section-reveal"
-import ProjectCard from "@/components/project-card"
+"use client";
+import type { Project } from "@/lib/profile";
+import { profile } from "@/lib/profile";
+import { SectionReveal } from "@/components/section-reveal";
+import ProjectCard from "@/components/project-card";
+import { motion } from "framer-motion";
 
-function ProjectItem({ project, colorClass }: { project: Project; colorClass: string }) {
+function ProjectItem({
+  project,
+  colorClass,
+}: {
+  project: Project;
+  colorClass: string;
+}) {
   return (
-    <Card className={`bg-card border-t-4 ${colorClass}`}>
-      <CardHeader className="pb-3">
-        <CardTitle className="text-base md:text-lg">
-          <span className="font-medium">{project.name}</span>
-          {project.company ? <span className="text-muted-foreground"> • {project.company}</span> : null}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-3">
-        <ul className="list-disc ps-5 space-y-2 text-sm text-pretty">
-          {project.points.map((p, i) => (
-            <li key={i}>{p}</li>
-          ))}
-        </ul>
-        {project.tech && project.tech.length > 0 ? (
-          <div className="flex flex-wrap gap-2">
-            {project.tech.map((t, i) => (
-              <Badge key={i} variant="outline" className="rounded-md">
-                {t}
-              </Badge>
-            ))}
-          </div>
-        ) : null}
-      </CardContent>
-    </Card>
-  )
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+    >
+      <ProjectCard
+        title={project.name}
+        org={project.company}
+        bullets={project.points}
+        tags={project.tech}
+        accent={
+          colorClass.includes("accent-warm")
+            ? "warm"
+            : colorClass.includes("accent")
+            ? "primary"
+            : "teal"
+        }
+        className="h-full cursor-pointer"
+      />
+    </motion.div>
+  );
 }
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-12 md:py-16 border-b border-border" aria-labelledby="projects-heading">
-      <div className="mx-auto max-w-5xl px-4">
+    <section
+      id="projects"
+      className="py-8 sm:py-12 md:py-16 lg:py-20 border-b border-border"
+      aria-labelledby="projects-heading"
+    >
+      <div className="mx-auto max-w-5xl px-3 sm:px-4">
         <SectionReveal>
-          <h2 id="projects-heading" className="text-2xl md:text-3xl font-semibold mb-6 text-pretty text-primary">
+          <h2
+            id="projects-heading"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 text-pretty text-primary"
+          >
             Projects
           </h2>
         </SectionReveal>
         <SectionReveal delay={0.08}>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
             {profile.projects.map((p, idx) => (
-              <ProjectCard
+              <ProjectItem
                 key={idx}
-                title={p.name}
-                org={p.company}
-                bullets={p.points}
-                tags={p.tech}
-                accent={idx % 3 === 0 ? "primary" : idx % 3 === 1 ? "warm" : "teal"}
-                className="h-full"
+                project={p}
+                colorClass={
+                  idx % 3 === 0
+                    ? "border-accent"
+                    : idx % 3 === 1
+                    ? "border-accent-warm"
+                    : "border-teal-500"
+                }
               />
             ))}
           </div>
         </SectionReveal>
       </div>
     </section>
-  )
+  );
 }

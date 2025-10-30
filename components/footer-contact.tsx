@@ -16,16 +16,17 @@ export default function FooterContact() {
   ] as Array<{ href: string; label: string; Icon: React.ComponentType<{ size?: number; className?: string }> }>
 
   return (
-    <div className="mx-auto max-w-5xl px-4">
-      <nav className="flex flex-wrap items-center justify-center gap-3 py-4 text-sm">
+    <div className="mx-auto max-w-5xl px-3 sm:px-4">
+      <nav className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 py-3 sm:py-4 text-xs sm:text-sm">
         {items.map(({ href, label, Icon }) => (
           <Link
             key={href + label}
             href={href}
-            className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 ring-1 ring-border bg-muted hover:bg-secondary/60 transition"
+            className="inline-flex items-center gap-1 sm:gap-2 rounded-full px-2 sm:px-3 py-1.5 ring-1 ring-border bg-muted hover:bg-secondary/60 transition flex-shrink-0"
           >
-            <Icon size={16} aria-hidden />
-            <span className="font-medium">{label}</span>
+            <Icon size={14} className="sm:size-4" aria-hidden />
+            <span className="font-medium hidden sm:inline">{label}</span>
+            <span className="sm:hidden font-medium">{label.split("@")[0] || label.split(" ")[0]}</span>
           </Link>
         ))}
       </nav>
