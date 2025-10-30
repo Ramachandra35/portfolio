@@ -23,10 +23,10 @@ export function Hero() {
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
                 >
-                  <Avatar className="size-14 sm:size-16 md:size-20 ring-2 ring-accent-warm flex-shrink-0">
+                  <Avatar className="size-16 sm:size-16 md:size-20 ring-2 ring-accent-warm flex-shrink-0">
                     <AvatarImage
                       src="/images/profile-avatar.jpg"
-                      alt="Portrait of Ramachandran S (placeholder)"
+                      alt="Portrait of Ramachandran Senthil (placeholder)"
                     />
                     <AvatarFallback className="bg-accent text-accent-foreground font-medium">
                       RS

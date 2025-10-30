@@ -1,53 +1,53 @@
 export type Experience = {
-  role: string
-  company: string
-  period: string
-  points: string[]
-}
+  role: string;
+  company: string;
+  period: string;
+  points: string[];
+};
 
 export type SkillGroup = {
-  category: string
-  items: string[]
-}
+  category: string;
+  items: string[];
+};
 
 export type Project = {
-  name: string
-  company?: string
-  period?: string
-  points: string[]
-  tech?: string[]
-}
+  name: string;
+  company?: string;
+  period?: string;
+  points: string[];
+  tech?: string[];
+};
 
 export type Education = {
-  school: string
-  degree: string
-  period: string
-}
+  school: string;
+  degree: string;
+  period: string;
+};
 
 export type Certification = {
-  name: string
-  issuer?: string
-  date?: string
-}
+  name: string;
+  issuer?: string;
+  date?: string;
+};
 
 export type Profile = {
-  name: string
-  location: string
-  phone: string
-  email: string
-  linkedin: string
-  summary: string
-  resumeUrl?: string
-  experiences: Experience[]
-  skills: SkillGroup[]
-  projects: Project[]
-  education: Education
-  certifications: Certification[]
-  github?: string
-}
+  name: string;
+  location: string;
+  phone: string;
+  email: string;
+  linkedin: string;
+  summary: string;
+  resumeUrl?: string;
+  experiences: Experience[];
+  skills: SkillGroup[];
+  projects: Project[];
+  education: Education;
+  certifications: Certification[];
+  github?: string;
+};
 
 export const profile: Profile = {
-  name: "Ramachandran S",
+  name: "Ramachandran Senthil",
   location: "Salem, India",
   phone: "+91 7339407192",
   email: "mikeyram35@gmail.com",
@@ -136,7 +136,12 @@ export const profile: Profile = {
         "Integrated Windows & Linux data sources; enabled logging via CloudWatch & Splunk.",
         "Developed detection queries and dashboards for validation.",
       ],
-      tech: ["AWS (API Gateway, Lambda, CodeBuild, SSM, EC2, CloudWatch)", "Splunk", "Terraform", "Ansible"],
+      tech: [
+        "AWS (API Gateway, Lambda, CodeBuild, SSM, EC2, CloudWatch)",
+        "Splunk",
+        "Terraform",
+        "Ansible",
+      ],
     },
     {
       name: "Automated Vulnerability Scanner with Web Interface",
@@ -169,4 +174,4 @@ export const profile: Profile = {
     { name: "C++ Programming", issuer: "Great Learning", date: "Jan 2025" },
   ],
   github: undefined,
-}
+};
