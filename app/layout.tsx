@@ -9,7 +9,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Portfolio - Ramachandran Senthil",
-  description: "Created with PAssionate",
+  description: "Created with Passionate skills and Love.",
   generator: "Ramachandran Senthil",
 };
 
