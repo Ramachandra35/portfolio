@@ -33,7 +33,6 @@ export type Certification = {
 export type Profile = {
   name: string;
   location: string;
-  phone: string;
   email: string;
   linkedin: string;
   summary: string;
