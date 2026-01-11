@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Hero } from "@/components/hero";
 import { ExperienceSection } from "@/components/experience";
@@ -8,8 +10,6 @@ import {
   CertificationsSection,
 } from "@/components/education";
 import FooterContact from "@/components/footer-contact";
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
 
 export default function Page() {
   return (
