@@ -49,7 +49,6 @@ export type Profile = {
 export const profile: Profile = {
   name: "Ramachandran Senthil",
   location: "Salem, India",
-  phone: "+91 7339407192",
   email: "mikeyram35@gmail.com",
   linkedin: "https://linkedin.com/in/ramachandran35",
   summary:
