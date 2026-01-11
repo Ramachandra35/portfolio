@@ -1,10 +1,15 @@
-import Link from "next/link"
-import { Hero } from "@/components/hero"
-import { ExperienceSection } from "@/components/experience"
-import { SkillsSection } from "@/components/skills"
-import { ProjectsSection } from "@/components/projects"
-import { EducationSection, CertificationsSection } from "@/components/education"
-import FooterContact from "@/components/footer-contact"
+import Link from "next/link";
+import { Hero } from "@/components/hero";
+import { ExperienceSection } from "@/components/experience";
+import { SkillsSection } from "@/components/skills";
+import { ProjectsSection } from "@/components/projects";
+import {
+  EducationSection,
+  CertificationsSection,
+} from "@/components/education";
+import FooterContact from "@/components/footer-contact";
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 export default function Page() {
   return (
@@ -24,7 +29,10 @@ export default function Page() {
           <nav aria-label="Primary" className="hidden md:block">
             <ul className="flex items-center gap-3 lg:gap-4 text-xs sm:text-sm text-muted-foreground">
               <li>
-                <a href="#experience" className="hover:text-foreground transition">
+                <a
+                  href="#experience"
+                  className="hover:text-foreground transition"
+                >
                   Experience
                 </a>
               </li>
@@ -34,17 +42,26 @@ export default function Page() {
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-foreground transition">
+                <a
+                  href="#projects"
+                  className="hover:text-foreground transition"
+                >
                   Projects
                 </a>
               </li>
               <li>
-                <a href="#education" className="hover:text-foreground transition">
+                <a
+                  href="#education"
+                  className="hover:text-foreground transition"
+                >
                   Education
                 </a>
               </li>
               <li>
-                <a href="#certifications" className="hover:text-foreground transition">
+                <a
+                  href="#certifications"
+                  className="hover:text-foreground transition"
+                >
                   Certs
                 </a>
               </li>
@@ -70,9 +87,11 @@ export default function Page() {
       <footer className="border-t border-border">
         <FooterContact />
         <div className="mx-auto max-w-5xl px-4 py-6 text-center text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Ramachandran S. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Ramachandran S. All rights reserved.
+          </p>
         </div>
       </footer>
     </>
-  )
+  );
 }
